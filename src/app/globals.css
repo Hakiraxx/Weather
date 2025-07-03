@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+/* Force dark mode styles */
+.dark {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+}
+
+/* Theme Variables */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* Smooth transitions for theme switching - Enhanced */
+*,
+*::before,
+*::after {
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+              color 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+              border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Specific smooth transitions for common classes */
+.transition-colors,
+[class*="bg-"],
+[class*="text-"],
+[class*="border-"],
+[class*="backdrop-blur"] {
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+              color 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+              border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              backdrop-filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Body styling with theme support */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Force dark mode for specific elements */
+html.dark body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+html.dark .bg-white\/40 {
+  background-color: rgba(31, 41, 55, 0.4) !important;
+}
+
+html.dark .bg-white\/50 {
+  background-color: rgba(31, 41, 55, 0.5) !important;
+}
